@@ -43,7 +43,7 @@ As a user:
 * pen the index file from the zipped file with any browser.                                                                     *
 *********************************************************************************************************************************
 ### Live Link
-    • Click this link https://github.com/AchayoEarnest/STUDENT-EXAMINATION-PORTAL to view the live application
+    • Click this link https://achayoearnest.github.io/STUDENT-EXAMINATION-PORTAL/ to view the live application
 
 ### Technology used: 
     1) Hyper Text Markup Language (HTML) – Was used to develop the structure of the page
