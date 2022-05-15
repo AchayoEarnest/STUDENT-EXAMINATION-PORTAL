@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">   
+    <title>Student Quiz App</title>
 </head>
 <body>
     <header>
@@ -25,35 +25,36 @@
     </header>
   <main class="quiz_sect_wrap">
       <div class="sect_container">
-          <div class="top_quiz_sect">
-              <div class="score_count"><span class="achieved">0</span>/<span class="out_of">1</span></div>
-              <h2>Which of the following is not a Javascript data type?</h2>
+          <div class="quiz_sect">
+              <div id="score_count"><span id="achieved">0</span>/<span id="out_of">1</span></div>
+              <h2 id="question">Question</h2>
               <ul id="ul_container">
                 <li class="input_options">
-                    <input type="radio" name="Answer" class="choices"> 
-                    <label for="a" id="a_data">Boolean</label>
+                    <input type="radio" name="Answer" class="choice_1"> 
+                    <label for="a" id="a_data">Choice_1</label>
                 </li>
                 <li class="input_options">
-                    <input type="radio" name="Answer" class="choices"> 
-                    <label for="b_data">Objects</label>
+                    <input type="radio" name="Answer" class="choice_2"> 
+                    <label for="b_data" id="b_data">Choice_2</label>
                 </li>
                 <li class="input_options">
-                    <input type="radio" name="Answer" class="choices"> 
-                    <label for="c_data">Redefined</label>
+                    <input type="radio" name="Answer" class="choice_3"> 
+                    <label for="c_data" id="c_data">Choice_3</label>
                 </li>
                 <li class="input_options">
-                    <input type="radio" name="Answer" class="choices"> 
-                    <label for="d_data">Undefined</label>
+                    <input type="radio" name="Answer"  class="choice_4" > 
+                    <label for="d_data" id="d_data">Choice_4</label>
                 </li>
                
               </ul>
               
           </div>
-          <button type="submit" id="submit_btn">Submit</button>
-      </div>
-   
+          <div>
+                <button type="submit" id="submit_btn" class="next">Submit</button>
+          </div>
           
-                    
+      </div>
+        <script src="./quizApp.js"></script>                   
   </main>  
     
 </body>
