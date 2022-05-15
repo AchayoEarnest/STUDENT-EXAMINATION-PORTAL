@@ -52,8 +52,9 @@ let a_data = document.getElementById('a_data');
 let b_data = document.getElementById('b_data');
 let c_data = document.getElementById('c_data');
 let d_data = document.getElementById('d_data');
-let achieved = document.getElementById('score_count');
-let next_btn = document.querySelectorAll('.next');
+let score_count = document.getElementById('score_count');
+let next = document.querySelector('.next_btn');
+// let next = document.getElementById('submit');
 
 
 
@@ -85,20 +86,25 @@ function scoreCalc (){
 //function for next Quiz
 
 function nextQuiz(){
-    if (q < questionArr-1) {
+    if (i < questionArr - 1) {
 
-        i = q + 1;
+        i = i + 1;
         displayQuiz();
     } else {
         points.innerHTML = score + '/' + questionArr.length;
+        quiz_sect.style.display = 'none';
+        achieved.style.display = 'block';
+
     }
 }
 
 //this function will activate button click event
-next.addEventListener('click', nextQuiz)
 
-
-function displayQuiz(){
-
-}
+// function displayQuiz(){
+    next.addEventListener('click', nextQuiz);
+// }
    
+// document.getElementById("myBtn").addEventListener("click", displayDate);
+
+
+displayQuiz()

@@ -2,8 +2,7 @@
 
 ## By Earnest Achayo
 
- ![image](./assets/images/)
- ![image](./assets/)
+ ![image](./assets/images/screeshot1.png)
 
 ## Table of Content
 
