@@ -52,22 +52,20 @@ let a_data = document.getElementById('a_data');
 let b_data = document.getElementById('b_data');
 let c_data = document.getElementById('c_data');
 let d_data = document.getElementById('d_data');
-let score_count = document.getElementById('score_count');
-let next = document.querySelector('.next_btn');
-// let next = document.getElementById('submit');
-
+let achieved = document.getElementById('score_count');
+let next = document.querySelector('.next_btn')
 
 
 function showQuiz(){
-    for (var i = 0; i > questionArr.length; i++) {
-         
+    for (var i = 0; i < questionArr.length; i--) {
+        questionSelect.innerHTML = 'Q.'+ (i+1) + ' ' + questionArr[i].question;
+        a_data.innerHTML = questionArr[i].a;
+        b_data.innerHTML = questionArr[i].b;
+        c_data.innerHTML = questionArr[i].c;
+        d_data.innerHTML = questionArr[i].d;
+        score_count.innerHTML =  'Quiz' + " " + (i+1) + " " + "of" + " " + questionArr.length;   
     }
-    questionSelect.innerHTML = 'Q.'+ (i+1) + ' ' + questionArr[i].question;
-    a_data.innerHTML = questionArr[i].a;
-    b_data.innerHTML = questionArr[i].b;
-    c_data.innerHTML = questionArr[i].c;
-    d_data.innerHTML = questionArr[i].d;
-    score_count.innerHTML =  'Quiz' + " " + (i+1) + " " + "of" + " " + questionArr.length;
+    
 }
 
 showQuiz()
@@ -76,35 +74,26 @@ showQuiz()
 
 function scoreCalc (){
     if (input.innerHTML === questionArr[i].correct && score_count < questionArr.length) {
-        score = score++;
+        score = score+1;
     }
     else {
         setTimeout(nextQuiz, 300)
     }
 } 
+next.addEventListener('click', nextQuiz)
 
 //function for next Quiz
 
 function nextQuiz(){
-    if (i < questionArr - 1) {
-
+    if (i < questionArr.length - 1) {
         i = i + 1;
-        displayQuiz();
+        displayQuiz(i);
     } else {
         points.innerHTML = score + '/' + questionArr.length;
-        quiz_sect.style.display = 'none';
-        achieved.style.display = 'block';
-
     }
 }
 
 //this function will activate button click event
-
-// function displayQuiz(){
-    next.addEventListener('click', nextQuiz);
-// }
-   
-// document.getElementById("myBtn").addEventListener("click", displayDate);
-
+next.addEventListener('click', nextQuiz)
 
 displayQuiz()
