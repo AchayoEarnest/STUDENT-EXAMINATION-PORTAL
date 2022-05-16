@@ -43,7 +43,17 @@ let questionArr = [
         d : "I dont know ",
         correct : "a"
 
+    },
+    {
+        question : "Which of the following is a Js framework?",
+        a : "Flask",
+        b : "Django",
+        c : "React", 
+        d : "Angular native ",
+        correct : "c"
+
     }
+
 ];
 
 let quizSect = document.getElementById('quiz_sect');
@@ -63,7 +73,7 @@ function showQuiz(){
         b_data.innerHTML = questionArr[i].b;
         c_data.innerHTML = questionArr[i].c;
         d_data.innerHTML = questionArr[i].d;
-        score_count.innerHTML =  'Quiz' + " " + (i+1) + " " + "of" + " " + questionArr.length;   
+        score_count.innerHTML =  'Quiz' + " " + (i+1) + " " + "of" + " " + questionArr.length;    
     }
     
 }
