@@ -1,4 +1,4 @@
-let questionArr = [
+const questionArr = [
     {
         question : "Which of the following is not a data type in Javascript?", 
         a : "Boolean",
@@ -52,58 +52,65 @@ let questionArr = [
         d : "Angular native ",
         correct : "c"
 
-    }
-
+    },
 ];
 
-let quizSect = document.getElementById('quiz_sect');
-let questionSelect = document.getElementById('question');
-let a_data = document.getElementById('a_data');
-let b_data = document.getElementById('b_data');
-let c_data = document.getElementById('c_data');
-let d_data = document.getElementById('d_data');
-let achieved = document.getElementById('score_count');
-let next = document.querySelector('.next_btn')
+const quiz = document.getElementById('quiz');
+const choicesEls = document.querySelectorAll('.choices');
+const questionEls = document.getElementById('question');
+const a_data = document.getElementById('a_data');
+const b_data = document.getElementById('b_data');
+const c_data = document.getElementById('c_data');
+const d_data = document.getElementById('d_data');
+const submitBtn = document.getElementById('myBtn');
 
+let currentQuiz = 0;
+let score = 0;
 
-function showQuiz(){
-    for (var i = 0; i < questionArr.length; i--) {
-        questionSelect.innerHTML = 'Q.'+ (i+1) + ' ' + questionArr[i].question;
-        a_data.innerHTML = questionArr[i].a;
-        b_data.innerHTML = questionArr[i].b;
-        c_data.innerHTML = questionArr[i].c;
-        d_data.innerHTML = questionArr[i].d;
-        score_count.innerHTML =  'Quiz' + " " + (i+1) + " " + "of" + " " + questionArr.length;    
+loadQuiz();
+
+function loadQuiz() {
+    deselectChoices();
+
+    const currentQuizData = questionArr[currentQuiz];
+
+    questionEls.innerText = currentQuizData.question;
+    a_data.innerText = currentQuizData.a;
+    b_data.innerText = currentQuizData.b;
+    c_data.innerText = currentQuizData.c;
+    d_data.innerText = currentQuizData.d;
+};
+
+function deselectChoices() {
+    choicesEls.forEach(choicesEl => choicesEl.checked = false);
+};
+
+function getSelected() {
+    let choice;
+    choicesEls.forEach(choicesEls => {
+        if (choicesEls.checked) {
+            choice = choicesEls.id;
+        }
+    });
+    return choice;
+};
+
+submitBtn.addEventListener('click', () => {
+    const choice = getSelected();
+    if (choice) {
+        if (choice === questionArr[currentQuiz].correct) {
+            score++;
+        };
+
+        currentQuiz++;
+
+        if (currentQuiz < questionArr.length) {
+            loadQuiz();
+        } else {
+            quiz.innerHTML = `
+            <h1 style="text-align: center">You scored ${score}/${questionArr.length}</h1>
+            <button onclick = "location.reload()">Reload</button>
+            `
+        }
     }
-    
-}
-
-showQuiz()
-
-// score calculator
-
-function scoreCalc (){
-    if (input.innerHTML === questionArr[i].correct && score_count < questionArr.length) {
-        score = score+1;
-    }
-    else {
-        setTimeout(nextQuiz, 300)
-    }
-} 
-next.addEventListener('click', nextQuiz)
-
-//function for next Quiz
-
-function nextQuiz(){
-    if (i < questionArr.length - 1) {
-        i = i + 1;
-        displayQuiz(i);
-    } else {
-        points.innerHTML = score + '/' + questionArr.length;
-    }
-}
-
-//this function will activate button click event
-next.addEventListener('click', nextQuiz)
-
-displayQuiz()
+});
