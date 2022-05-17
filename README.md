@@ -2,7 +2,7 @@
 
 ## By Earnest Achayo
 
- ![image](./assets/images/screeshot1.png)
+ ![image](./assets/images/quizapp.png)
 
 ## Table of Content
 
