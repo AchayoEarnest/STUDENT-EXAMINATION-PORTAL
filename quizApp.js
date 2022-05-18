@@ -21,8 +21,8 @@ const questionArr = [
         question : "What is the use of the Push method in JavaScript?",
         a : "To add or append one or more elements to an Array end.",
         b : "To remove an item from a list in Array",
-        b : "To push unwanted items out of an Array list",
-        c : "To push an item at the beginning of an Array list",
+        c : "To push unwanted items out of an Array list",
+        d : "To push an item at the beginning of an Array list",
         correct : "a"
     },
 
@@ -36,7 +36,7 @@ const questionArr = [
     },
 
     {
-        question : "Is Javascript sensitive?",
+        question : "Is Javascript case sensitive?",
         a : "Yes",
         b : "No",
         c : "Maybe", 
