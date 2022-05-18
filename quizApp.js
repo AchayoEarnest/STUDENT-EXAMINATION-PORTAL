@@ -55,7 +55,7 @@ const questionArr = [
     },
 ];
 
-const quiz = document.getElementById('quiz');
+// const quiz = document.getElementById('quiz');
 const choicesEls = document.querySelectorAll('.choices');
 const questionEls = document.getElementById('question');
 const a_data = document.getElementById('a_data');
@@ -96,9 +96,9 @@ function getSelected() {
 };
 
 submitBtn.addEventListener('click', () => {
-    const choice = getSelected();
-    if (choice) {
-        if (choice === questionArr[currentQuiz].correct) {
+    const chosen = getSelected();
+    if (chosen) {
+        if (chosen === questionArr[currentQuiz].correct) {
             score++;
         };
 
