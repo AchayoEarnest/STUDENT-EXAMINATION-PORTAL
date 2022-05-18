@@ -80,11 +80,11 @@ function loadQuiz() {
     c_data.innerText = currentQuizData.c;
     d_data.innerText = currentQuizData.d;
 };
-
+//this function deselect the buttons
 function deselectChoices() {
     choicesEls.forEach(choicesEl => choicesEl.checked = false);
 };
-
+//this function will get the selected buttos when a user clicks one.
 function getSelected() {
     let choice;
     choicesEls.forEach(choicesEls => {
@@ -94,7 +94,7 @@ function getSelected() {
     });
     return choice;
 };
-
+//this method will add an event listener once the submit button has been clicked
 submitBtn.addEventListener('click', () => {
     const chosen = getSelected();
     if (chosen) {
