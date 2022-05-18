@@ -49,7 +49,8 @@ As a user:
 ### Technology used: 
     1) Hyper Text Markup Language (HTML) – Was used to develop the structure of the page
     2) Cascading Style Sheets (CSS) -Was used to develop the styling of the page
-    3) README.md for the md document to help other developers and users undestand more on how to use the page
+    3) Javascripts(js) was used to make the App/Page functional i.e poulating the scores and leading the user to next pages.
+    4) README.md for the md document to help other developers and users undestand more on how to use the page
 
 ### Known bugs
 - So far so cool. No known bugs so far
